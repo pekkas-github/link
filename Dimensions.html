@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <base target="_top">
+
+    <style>
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family: arial;
+        font-size: 1.2vw;
+      }
+
+       body {
+        padding: 0.5rem;
+        border: 1px solid black;
+      }
+
+      table {
+        margin: auto;
+
+      }
+
+      td, th {
+        padding: 0.3em;
+        border: 1px solid black;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <h2>Display dimensions</h2>
+
+    <table>
+      <tr>
+        <th>Dimension</th>
+        <th>Width (px)</th>
+        <th>Height (px)</th>
+      </tr>
+      <tr>
+        <td>Screen</td>
+        <td id="screen-width"> </td>
+        <td id="screen-height"></td>
+      </tr>
+      <tr>
+        <td>Viewport</td>
+        <td id="viewport-width"> </td>
+        <td id="viewport-height"></td>
+      </tr>
+    </table>
+    <div>Screen - Viewport ratio: <span id="ratio"></span>
+
+    <script>
+
+      const screenWidth = document.querySelector('#screen-width')
+      const viewportWidth = document.querySelector('#viewport-width')
+      const screenHeight = document.querySelector('#screen-height')
+      const viewportHeight = document.querySelector('#viewport-height')
+      const body = document.querySelector('body')
+      const ratio = document.querySelector('#ratio')
+
+      body.onresize = show
+      show()
+
+      function show() {
+        screenWidth.innerHTML = screen.width
+        viewportWidth.innerHTML = window.innerWidth;
+        screenHeight.innerHTML = screen.height
+        viewportHeight.innerHTML = window.innerHeight;
+        const ratioValue = window.innerWidth / screen.width
+        ratio.innerHTML = `${ratioValue}`
+        document.querySelector('html').style = `font-size: ${1.2 * ratioValue}vw`
+      }
+
+    </script>
+    
+    
+  </body>
+</html>
+
+
