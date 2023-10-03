@@ -32,6 +32,10 @@
         border: 1px solid black;
       }
 
+      ¤ratio {
+        fonrt-size: 4vm;
+      }
+
     </style>
 
   </head>
@@ -56,7 +60,7 @@
         <td id="viewport-height"></td>
       </tr>
     </table>
-    <div>Screen - Viewport ratio: <span id="ratio"></span>
+    <div>Screen - Viewport ratio: <span id="ratio">m</span>
 
     <script>
 
@@ -75,9 +79,6 @@
         viewportWidth.innerHTML = window.innerWidth;
         screenHeight.innerHTML = screen.height
         viewportHeight.innerHTML = window.innerHeight;
-        const ratioValue = window.innerWidth / screen.width
-        ratio.innerHTML = `${ratioValue}`
-        document.querySelector('html').style = `font-size: ${1.2 * ratioValue}vw`
       }
 
     </script>
