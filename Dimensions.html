@@ -17,6 +17,18 @@
         font-size: 1.2vw;
       }
 
+      @media (orientation: portrait) {
+        html {
+          font-size: 5.8vw;
+        }
+      }
+
+      @media (orientation: landscape) and (max-width: 1000px) {
+        html {
+          font-size: 3vw;
+        }
+      }
+
        body {
         padding: 0.5rem;
         border: 1px solid black;
@@ -30,22 +42,6 @@
       td, th {
         padding: 0.3em;
         border: 1px solid black;
-      }
-
-      #ratio {
-        font-size: 4vw;
-      }
-
-      @media (orientation: portrait) {
-        #ratio {
-          font-size: 19.4vw;
-        }
-      }
-
-      @media (orientation: landscape) and (max-width: 1000px) {
-        #ratio {
-          font-size: 10vw;
-        }
       }
 
     </style>
